@@ -1,5 +1,5 @@
 {
-  "name": "mean-app",
+  "name": "y",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -44,5 +44,17 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Noonmoon/mean-auth-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Noonmoon/mean-auth-app/issues"
+  },
+  "homepage": "https://github.com/Noonmoon/mean-auth-app#readme"
 }
