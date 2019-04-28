@@ -1,3 +1,33 @@
-<p>
-  register works!
-</p>
+<div class="container" id="form-container">
+  <form (submit)="onRegisterSubmit()">
+    <fieldset>
+      <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+
+      <div class="form-group">
+        <label for="inputEmail">Enter Name</label>
+        <input type="text" [(ngModel)]="name" name="name" id="inputName" class="form-control" placeholder="Name" autofocus required>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword">Username</label>
+        <input type="text" [(ngModel)]="username" name="username" id="inputUsername" class="form-control" placeholder="Username" required>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword">Email</label>
+        <input type="email" [(ngModel)]="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <input type="password" [(ngModel)]="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      </div>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </fieldset>
+  </form>
+</div>
