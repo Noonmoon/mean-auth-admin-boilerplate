@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ValidateService } from '../../services/validate.service'
+import { ValidateService } from '../../services/validate.service';
+import { AuthService } from '../../services/auth.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { Router } from '@angular/router'
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +16,13 @@ export class RegisterComponent implements OnInit {
   email: String;
   password: String;
 
-  constructor(private validateService: ValidateService, private _flashMessagesService: FlashMessagesService) { }
+  constructor(
+    private validateService: ValidateService, 
+    private _flashMessagesService: FlashMessagesService,
+    private authService: AuthService,
+    private router: Router,
+    private http: HttpClient
+  ) { }
 
   ngOnInit() {
   }
@@ -35,9 +44,17 @@ export class RegisterComponent implements OnInit {
     if(!this.validateService.validateEmail(user.email)) {
       this._flashMessagesService.show('Please ensure valid email is submitted', { cssClass: 'alert-danger', timeout: 5000 });
     }
+    
+    // Register User
+    this.authService.registerUser(user).subscribe(response => {
+      if(response.success) {
+        this._flashMessagesService.show('User registered, thank you', { cssClass: 'alert-success', timeout: 5000 });        
+        this.router.navigate(['/login']);
+      } else {
+        this._flashMessagesService.show('User not registered, try again', { cssClass: 'alert-danger', timeout: 5000 });        
+        this.router.navigate(['/register']);
+      }
+    });
+
   }
-
-
-
-
 }

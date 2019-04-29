@@ -1,0 +1,9 @@
+#form-container {
+  width: 600px;
+  margin: 7rem auto;
+}
+
+.form-control:focus {
+  border-color: #6264e400 !important;
+  box-shadow: 0 0 5px rgba(98, 101, 228, 0) !important;
+}
