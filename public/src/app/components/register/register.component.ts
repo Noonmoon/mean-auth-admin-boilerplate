@@ -3,7 +3,6 @@ import { ValidateService } from '../../services/validate.service';
 import { AuthService } from '../../services/auth.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router'
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -20,8 +19,7 @@ export class RegisterComponent implements OnInit {
     private validateService: ValidateService, 
     private _flashMessagesService: FlashMessagesService,
     private authService: AuthService,
-    private router: Router,
-    private http: HttpClient
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -57,6 +55,5 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/register']);
       }
     });
-
   }
 }
