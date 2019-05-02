@@ -20,10 +20,9 @@ export class NavbarComponent implements OnInit {
   }
 
   onLogoutClick() {
-    console.log('logout ran')
     this.authService.logout();
     this._flashMessagesService.show('Now logged out, thank you', { cssClass: 'alert-success', timeout: 5000 }); 
-    this.router.navigate(['/login']);
+    this.router.navigate(['login']);
     return false;
   }
 }
