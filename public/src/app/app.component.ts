@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as _ from 'bootstrap';
 
 @Component({
   selector: 'app-root',
